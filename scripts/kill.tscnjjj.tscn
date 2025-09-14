@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://rb6iba13o0ej"]
+
+[ext_resource type="Script" uid="uid://bp5r05t5d6exf" path="res://scripts/kill.gd" id="1_6j0ju"]
+
+[node name="kill" type="Area2D"]
+script = ExtResource("1_6j0ju")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

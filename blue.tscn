@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://dar5hknq0yn4j"]
+
+[ext_resource type="Texture2D" uid="uid://n5c871bdwe4c" path="res://scences/Blue Idle - no slime.png" id="1_lbmgo"]
+[ext_resource type="PackedScene" uid="uid://rb6iba13o0ej" path="res://scripts/kill.tscnjjj.tscn" id="2_f5o0q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p886q"]
+atlas = ExtResource("1_lbmgo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4802"]
+atlas = ExtResource("1_lbmgo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuei2"]
+atlas = ExtResource("1_lbmgo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulipx"]
+atlas = ExtResource("1_lbmgo")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg7rl"]
+atlas = ExtResource("1_lbmgo")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87n4y"]
+atlas = ExtResource("1_lbmgo")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8po2l"]
+atlas = ExtResource("1_lbmgo")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oye1n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p886q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4802")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuei2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulipx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg7rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87n4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8po2l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_am8gs"]
+radius = 3.0
+
+[node name="blue" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.575, 0.575)
+sprite_frames = SubResource("SpriteFrames_oye1n")
+autoplay = "default"
+frame_progress = 0.883736
+
+[node name="kill" parent="." instance=ExtResource("2_f5o0q")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_am8gs")
